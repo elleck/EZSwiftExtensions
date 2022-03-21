@@ -78,7 +78,7 @@ public struct ez {
 
     /// EZSE: Returns true if its simulator and not a device //TODO: Add to readme
     public static var isSimulator: Bool {
-        #if targetEnvironment(simulator)
+    #if targetEnvironment(simulator)
         return true
     #else
         return false
@@ -87,7 +87,7 @@ public struct ez {
 
     /// EZSE: Returns true if its on a device and not a simulator //TODO: Add to readme
     public static var isDevice: Bool {
-        #if targetEnvironment(simulator)
+    #if targetEnvironment(simulator)
         return false
     #else
         return true
@@ -141,7 +141,7 @@ public struct ez {
 
         #if os(iOS)
 
-        if screenOrientation == .portrait  {
+        if screenOrientation == .portrait || screenOrientation == .portraitUpsideDown {
             return UIScreen.main.bounds.size.width
         } else {
             return UIScreen.main.bounds.size.height
@@ -159,7 +159,7 @@ public struct ez {
 
         #if os(iOS)
 
-        if screenOrientation == .portrait  {
+        if screenOrientation == .portrait || screenOrientation == .portraitUpsideDown {
             return UIScreen.main.bounds.size.height
         } else {
             return UIScreen.main.bounds.size.width
@@ -183,7 +183,7 @@ public struct ez {
 
     /// EZSE: Return screen's height without StatusBar
     public static var screenHeightWithoutStatusBar: CGFloat {
-        if screenOrientation == .portrait {
+        if screenOrientation == .portrait || screenOrientation == .portraitUpsideDown {
             return UIScreen.main.bounds.size.height - screenStatusBarHeight
         } else {
             return UIScreen.main.bounds.size.width - screenStatusBarHeight
