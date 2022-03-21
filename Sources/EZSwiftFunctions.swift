@@ -9,6 +9,7 @@
 //TODO: others standart video, gif
 
 import Foundation
+import UIKit
 
 public struct ez {
     /// EZSE: Returns app's name
