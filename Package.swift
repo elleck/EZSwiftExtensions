@@ -22,7 +22,7 @@ let package = Package(
             path: "Sources",    
             dependencies: []),
         .testTarget(
-            name: "SpringTest",
+            name: "EZSwiftExtensionsTest",
             dependencies: ["EZSwiftExtensionsTest"]),
     ]
 )
